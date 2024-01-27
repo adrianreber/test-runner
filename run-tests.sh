@@ -2,6 +2,6 @@
 
 set +ex
 
-git checkout https://github.com/adrianreber/ohpc-infrastructure.git
+git clone https://github.com/adrianreber/ohpc-infrastructure.git
 cd ohpc-infrastructure.git/ansible/roles/test/files/
 ./run-ci.sh almalinux9.2 3.1
