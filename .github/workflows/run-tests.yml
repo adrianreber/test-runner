@@ -1,0 +1,12 @@
+name: Run Tests
+
+on: [push]
+
+jobs:
+  run-tests:
+    runs-on: openhpc-lenovo-repo
+
+    steps:
+      - name: First
+        run:
+          hostname
