@@ -10,3 +10,7 @@ jobs:
       - name: First
         run:
           hostname
+      - uses: actions/checkout@v3
+      - name: Second
+        run:
+          ./run-tests.sh
