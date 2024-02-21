@@ -152,7 +152,7 @@ for arch in requested['arches']:
         if hostname in hosts:
             supported_host_found = True
             break
-    if supported_host_found == True:
+    if supported_host_found:
         break
 
 if not supported_host_found:
@@ -169,7 +169,6 @@ for o_s in requested['os']:
             o_s,
             release,
             ]
-        logging.info("--> Running following test command %s" % test_command)
         success, _ = run_command(test_command)
         if success:
             test_success.append(test_command)

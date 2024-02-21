@@ -3,4 +3,4 @@ releases:
 os:
   - almalinux9.2
 arches:
-  - x86_64
+  - aarch64
