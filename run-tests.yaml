@@ -5,4 +5,4 @@ os:
 arches:
   - x86_64
 repositories:
-  - factory
+  - Factory
