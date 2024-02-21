@@ -8,7 +8,6 @@ import shutil
 import time
 import yaml
 import sys
-import csv
 import os
 import io
 
