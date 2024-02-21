@@ -22,7 +22,7 @@ def run_command(command):
         command,
         bufsize=1,
         stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
+        stderr=subprocess.PIPE,
         universal_newlines=True,
     )
 
@@ -171,7 +171,7 @@ failed = []
 test_success = []
 
 for o_s in requested['os']:
-    for repository in supported['supported_repositories']:
+    for repository in requested['repositories']:
         for release in requested['releases']:
             test_command = [
                 "./run-ci.sh",
