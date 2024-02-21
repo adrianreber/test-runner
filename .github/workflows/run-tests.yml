@@ -13,4 +13,4 @@ jobs:
       - uses: actions/checkout@v3
       - name: Second
         run:
-          ./run-tests.sh
+          ./run-tests.py

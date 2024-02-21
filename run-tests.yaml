@@ -1,0 +1,6 @@
+releases:
+  - 3.0.1
+os:
+  - almalinux9.2
+arches:
+  - x86_64
