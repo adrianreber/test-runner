@@ -172,12 +172,12 @@ failed = []
 test_success = []
 
 for o_s in requested['os']:
-    for repositoriy in supported['supported_repositories']:
+    for repository in supported['supported_repositories']:
         for release in requested['releases']:
             test_command = [
                 "./run-ci.sh",
                 o_s,
-                release,
+                str(release),
                 repository,
                 ]
             success, _ = run_command(test_command)
