@@ -136,6 +136,15 @@ for arch in requested['arches']:
         )
         not_supported = True
 
+for repository in requested['repositories']:
+    if repository not in supported['supported_repositories']:
+        logging.error(
+            "Requested repository (%s) not in list of supported repositories (%s)",
+            repository,
+            supported['supported_repositories'],
+        )
+        not_supported = True
+
 if not_supported:
     sys.exit(1)
 
@@ -163,18 +172,20 @@ failed = []
 test_success = []
 
 for o_s in requested['os']:
-    for release in requested['releases']:
-        test_command = [
-            "./run-ci.sh",
-            o_s,
-            release,
-            ]
-        success, _ = run_command(test_command)
-        if success:
-            test_success.append(test_command)
-        else:
-            logging.error("Running '%s' failed" % test_command)
-            failed.append(test_command)
+    for repositoriy in supported['supported_repositories']:
+        for release in requested['releases']:
+            test_command = [
+                "./run-ci.sh",
+                o_s,
+                release,
+                repository,
+                ]
+            success, _ = run_command(test_command)
+            if success:
+                test_success.append(test_command)
+            else:
+                logging.error("Running '%s' failed" % test_command)
+                failed.append(test_command)
 
 for success in test_success:
     logging.info("----> %s" % success)

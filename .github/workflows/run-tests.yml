@@ -7,10 +7,7 @@ jobs:
     runs-on: openhpc-lenovo-repo
 
     steps:
-      - name: First
-        run:
-          hostname
-      - uses: actions/checkout@v3
-      - name: Second
+      - uses: actions/checkout@v4
+      - name: Run Tests
         run:
           ./run-tests.py

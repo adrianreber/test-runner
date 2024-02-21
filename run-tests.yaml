@@ -4,3 +4,5 @@ os:
   - almalinux9.2
 arches:
   - aarch64
+repositories:
+  - factory
