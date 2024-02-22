@@ -22,7 +22,7 @@ def run_command(command):
         command,
         bufsize=1,
         stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
         universal_newlines=True,
     )
 
